@@ -98,6 +98,7 @@ Route::get('/config', function () {
 })->name('config.index');
 
 
+// Ruta /ping para verificar vida en producción
 Route::get('/ping', function () {
     return response()->json(['status' => 'alive'], 200);
 });
