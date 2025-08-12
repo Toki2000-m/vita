@@ -13,9 +13,8 @@
 
     <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon" />
 
-    @vite('resources/css/app.css')
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-    <script type="module" src="/resources/js/app.js"></script>
 </head>
 <body class="flex flex-col bg-[#FAFAFA] min-h-screen text-gray-700">
 
