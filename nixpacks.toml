@@ -1,0 +1,2 @@
+[start]
+cmd = "vendor/bin/heroku-php-apache2 -C 'extension=mongodb.so' public/"
