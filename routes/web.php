@@ -102,3 +102,18 @@ Route::get('/config', function () {
 Route::get('/ping', function () {
     return response()->json(['status' => 'alive'], 200);
 });
+
+Route::get('/mongo-check', function () {
+    try {
+        $count = Perfumes::count();
+        return [
+            'model_connected' => true,
+            'perfumes_count' => $count,
+        ];
+    } catch (\Exception $e) {
+        return [
+            'model_connected' => false,
+            'error' => $e->getMessage(),
+        ];
+    }
+});
