@@ -3,6 +3,9 @@ FROM php:8.2-apache
 RUN apt-get update && apt-get install -y \
     libssl-dev \
     pkg-config \
+    git \
+    zip \
+    unzip \
     && pecl install mongodb \
     && docker-php-ext-enable mongodb
 
@@ -12,7 +15,6 @@ COPY . /var/www/html
 
 WORKDIR /var/www/html
 
-# Instalar dependencias de Laravel
 RUN composer install --no-dev --optimize-autoloader
 
 RUN chown -R www-data:www-data /var/www/html \
