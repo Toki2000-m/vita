@@ -39,4 +39,7 @@ RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
     && npm run build
 
 EXPOSE 80
-CMD ["apache2-foreground"]
+
+# 🧩 Ejecuta Apache explícitamente
+ENTRYPOINT ["/usr/sbin/apache2ctl"]
+CMD ["-D", "FOREGROUND"]
