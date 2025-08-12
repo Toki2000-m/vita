@@ -1,2 +1,2 @@
 [start]
-cmd = "heroku-php-apache2 public/ -C 'extension=mongodb.so'"
+cmd = "heroku-php-apache2 public/"
