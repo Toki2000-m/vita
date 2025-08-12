@@ -40,6 +40,5 @@ RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
 
 EXPOSE 80
 
-# 🧩 Ejecuta Apache explícitamente
-ENTRYPOINT ["/usr/sbin/apache2ctl"]
-CMD ["-D", "FOREGROUND"]
+# 🧩 Ejecuta Apache directamente
+CMD /usr/sbin/apache2ctl -D FOREGROUND
