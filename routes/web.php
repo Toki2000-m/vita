@@ -18,6 +18,7 @@ use App\Http\Controllers\Config\UsuariosController;
 
 
 
+
 // Rutas para vistas
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
@@ -95,3 +96,8 @@ Route::prefix('config')->name('config.')->group(function () {
 Route::get('/config', function () {
     return view('config.index');
 })->name('config.index');
+
+
+Route::get('/ping', function () {
+    return response()->json(['status' => 'alive'], 200);
+});
